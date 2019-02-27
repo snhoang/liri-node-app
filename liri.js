@@ -19,11 +19,6 @@ var fs = require("fs");
 
 // spitify API cliend using out client id and secret 
 var spotify = new Spotify(keys.spotify);
-  
-
-
-// id: <049fe24238eb4276ae69d013c9af1df2>,
-  // secret: <f69af998514a430ea7d88ae5950bc5ff>
 
 
 
@@ -34,6 +29,14 @@ spotify.search(
       type: 'track', 
       query: 'All the Small Things'
     },
+    function(err,data){
+      if(err){
+        console.log("Error : " + err);
+        return;
+      }
+
+
+    })
 
   
 
