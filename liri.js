@@ -21,10 +21,17 @@ var fs = require("fs");
 var spotify = new Spotify(keys.spotify);
 
 
+// create a function to get the artists
+var getArtistNames = function(artist) {
+
+};
+
+// Spotify search Function
+
+var getMeSpotify = function(songName{
 
 
- 
-spotify.search(
+  spotify.search(
     { 
       type: 'track', 
       query: 'All the Small Things'
@@ -38,5 +45,5 @@ spotify.search(
 
     })
 
-  
+})
 
