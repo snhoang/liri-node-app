@@ -1,7 +1,18 @@
+// Dependencies
+// read and set environment variables
 require("dotenv").config();
 
-
+// Import the node spotify api NPM package
 var Spotify = require('node-spotify-api');
+
+// import the API keys
+var keys = require("./keys");
+
+// import the request 
+var request = require("request");
+
+// import the moment npm packages
+var moment = require("moment");
  
 var spotify = new Spotify({
   id: <049fe24238eb4276ae69d013c9af1df2>,
