@@ -89,3 +89,59 @@ var linkMyBands = function(artist) {
   });
 };
 
+// movie search function
+var linkMyMovie = function(movieName){
+  if (movieName === undefined) {
+    movieName = "The Matrix";
+  }
+
+  var urlHit =
+  "";
+
+  request(urlHit, function(error, response, body){
+    if(!error && response.statusCode === 200){
+      var jsonData = JSON.parse(body);
+
+
+      console.log("Title: " + jsonData.Title);
+      console.log("Year: " + jsonData.Year);
+      console.log("Rated: " + jsonData.Rated);
+      console.log("IMBD Rating: " + jsonData.imdbRating);
+      console.log("Country: " + jsonData.Counry);
+      console.log("Language: " + jsonData.Language);
+      console.log("Plot: " + jsonData.Plot);
+      console.log("Actors: " + jsonData.Actors);
+      console.log("Rotten Tomatoes Ratings: " + jsonData.Rating[1].Value);
+
+
+    }
+  });
+};
+
+
+// Function for running
+var doSomething = function() {
+  fs.readFile("random.txt", "utf8", function (error, data){
+    console.log(data);
+
+    var dataArr = data.split(",");
+
+    if(dataArr.length === 2){
+      pick(dataArr[0], dataArr[1]);
+    } else if (dataArr.length === 1) {
+      pick(dataArr[0]);
+    }
+  });
+};
+
+
+var runThis = function(argOne, argTwo) {
+  pick(argOne,argTwo);
+};
+
+
+
+
+// running the main process
+
+runThis(process.argv[2], process.argv.slice(3).join(" "));
